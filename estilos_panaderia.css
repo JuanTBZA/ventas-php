@@ -1,0 +1,267 @@
+:root {
+    --bakery-cream: #fff7ec;
+    --bakery-cream-strong: #f6e7d5;
+    --bakery-caramel: #d08a4b;
+    --bakery-cocoa: #4b2d1a;
+    --bakery-rose: #f3c9b4;
+    --bakery-green: #2f6f4e;
+    --bakery-shadow: 0 20px 45px rgba(75, 45, 26, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background: radial-gradient(circle at top, #fffdf8 0%, var(--bakery-cream) 55%, #fef1e2 100%);
+    color: #3a2618;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+.bakery-page {
+    padding-bottom: 3rem;
+}
+
+.navbar.bakery-nav {
+    background: linear-gradient(90deg, #3e2415, #6b3a1c);
+    border-radius: 20px;
+    padding: 0.85rem 1.5rem;
+    box-shadow: var(--bakery-shadow);
+}
+
+.navbar.bakery-nav .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff9f2;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.navbar.bakery-nav .navbar-brand span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.navbar.bakery-nav .navbar-brand small {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #f7d9be;
+}
+
+.navbar.bakery-nav .nav-link {
+    color: #fbe9d5;
+    font-weight: 500;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    margin: 0 0.15rem;
+    transition: all 0.2s ease;
+}
+
+.navbar.bakery-nav .nav-link:hover,
+.navbar.bakery-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.navbar.bakery-nav .navbar-toggler {
+    border: none;
+}
+
+.navbar.bakery-nav .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.bakery-shell {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--bakery-shadow);
+    margin-top: 1.5rem;
+}
+
+.bakery-hero {
+    background: linear-gradient(120deg, #fff1e2, #fbe2ce);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--bakery-shadow);
+}
+
+.bakery-hero h1,
+.bakery-hero h2 {
+    color: var(--bakery-cocoa);
+    font-weight: 600;
+}
+
+.badge-bakery {
+    background: rgba(208, 138, 75, 0.15);
+    color: var(--bakery-caramel);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(75, 45, 26, 0.08);
+}
+
+.card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #fff8f0 0%, #fff1e5 100%);
+    border-radius: 22px;
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(208, 138, 75, 0.2);
+    color: var(--bakery-caramel);
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 0.65rem;
+}
+
+.table thead th {
+    border: none;
+    color: #6f4b34;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+}
+
+.table tbody tr {
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(75, 45, 26, 0.08);
+    border-radius: 16px;
+}
+
+.table tbody td {
+    border-top: none;
+    padding: 0.95rem 1rem;
+}
+
+.alert.bakery-alert {
+    background: linear-gradient(120deg, #fff6ea, #ffe7d2);
+    border: none;
+    color: #5a341f;
+    border-radius: 18px;
+    box-shadow: var(--bakery-shadow);
+}
+
+.btn {
+    border-radius: 999px;
+    font-weight: 600;
+    padding: 0.55rem 1.4rem;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, #d08a4b, #b56a32);
+    box-shadow: 0 10px 20px rgba(208, 138, 75, 0.25);
+}
+
+.btn-warning {
+    background: linear-gradient(120deg, #f6c07e, #e49b51);
+    color: #3a2618;
+}
+
+.btn-info {
+    background: linear-gradient(120deg, #93c5a8, #6ca384);
+    color: #fff;
+}
+
+.btn-outline-light {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.form-control,
+.form-select {
+    border-radius: 14px;
+    border: 1px solid #e9d4bf;
+    padding: 0.65rem 0.85rem;
+    box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bakery-caramel);
+    box-shadow: 0 0 0 0.2rem rgba(208, 138, 75, 0.15);
+}
+
+.login-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 26px;
+    box-shadow: var(--bakery-shadow);
+    padding: 2.5rem;
+}
+
+.login-side {
+    background: linear-gradient(160deg, #5b3318 0%, #a45d2b 100%);
+    color: #fff3e4;
+    border-radius: 22px;
+    padding: 2.5rem;
+    height: 100%;
+}
+
+.login-side h2 {
+    font-weight: 600;
+}
+
+.login-side p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.bakery-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991px) {
+    .navbar.bakery-nav {
+        border-radius: 16px;
+    }
+
+    .login-card {
+        padding: 2rem;
+    }
+}
