@@ -5,17 +5,17 @@ include_once "funciones.php";
 session_start();
 if(empty($_SESSION['usuario'])) header("location: login.php");
 $cartas = [
-    ["titulo" => "Total ventas", "icono" => "fa fa-money-bill", "total" => "$".obtenerTotalVentas(), "color" => "#A71D45"],
-    ["titulo" => "Ventas hoy", "icono" => "fa fa-calendar-day", "total" => "$".obtenerTotalVentasHoy(), "color" => "#2A8D22"],
-    ["titulo" => "Ventas semana", "icono" => "fa fa-calendar-week", "total" => "$".obtenerTotalVentasSemana(), "color" => "#223D8D"],
-    ["titulo" => "Ventas mes", "icono" => "fa fa-calendar-alt", "total" => "$".obtenerTotalVentasMes(), "color" => "#D55929"],
+    ["titulo" => "Total ventas", "icono" => "fa fa-coins", "total" => "$".obtenerTotalVentas(), "color" => "#b86b33"],
+    ["titulo" => "Ventas hoy", "icono" => "fa fa-sun", "total" => "$".obtenerTotalVentasHoy(), "color" => "#2f6f4e"],
+    ["titulo" => "Ventas semana", "icono" => "fa fa-calendar-week", "total" => "$".obtenerTotalVentasSemana(), "color" => "#8c5a2b"],
+    ["titulo" => "Ventas mes", "icono" => "fa fa-calendar-alt", "total" => "$".obtenerTotalVentasMes(), "color" => "#d08a4b"],
 ];
 
 $totales = [
-	["nombre" => "Total productos", "total" => obtenerNumeroProductos(), "imagen" => "img/productos.png"],
-	["nombre" => "Ventas registradas", "total" => obtenerNumeroVentas(), "imagen" => "img/ventas.png"],
-	["nombre" => "Usuarios registrados", "total" => obtenerNumeroUsuarios(), "imagen" => "img/usuarios.png"],
-	["nombre" => "Clientes registrados", "total" => obtenerNumeroClientes(), "imagen" => "img/clientes.png"],
+	["nombre" => "Total productos", "total" => obtenerNumeroProductos(), "icono" => "fa fa-bread-slice"],
+	["nombre" => "Ventas registradas", "total" => obtenerNumeroVentas(), "icono" => "fa fa-cash-register"],
+	["nombre" => "Usuarios registrados", "total" => obtenerNumeroUsuarios(), "icono" => "fa fa-user-friends"],
+	["nombre" => "Clientes registrados", "total" => obtenerNumeroClientes(), "icono" => "fa fa-heart"],
 ];
 
 $ventasUsuarios = obtenerVentasPorUsuario();
@@ -23,18 +23,20 @@ $ventasClientes = obtenerVentasPorCliente();
 $productosMasVendidos = obtenerProductosMasVendidos();
 ?>
 
-<div class="container">
-	<div class="alert alert-info" role="alert">
-		<h1>
-			Hola, <?= $_SESSION['usuario']?>
-		</h1>
+<div class="container bakery-shell">
+	<div class="bakery-hero mb-4">
+		<span class="badge-bakery">Panel principal</span>
+		<h1 class="mt-2">Hola, <?= $_SESSION['usuario']?> 👋</h1>
+		<p class="mb-0">Resumen diario de ventas de la panadería Gian &amp; Carlos.</p>
 	</div>
-	<div class="card-deck row mb-2">
+	<div class="card-deck row mb-4">
 	<?php foreach($totales as $total){?>
 		<div class="col-xs-12 col-sm-6 col-md-3" >
-			<div class="card text-center">
+			<div class="card stat-card text-center h-100">
 				<div class="card-body">
-					<img class="img-thumbnail" src="<?= $total['imagen']?>" alt="">
+					<div class="stat-icon">
+						<i class="<?= $total['icono']?>"></i>
+					</div>
 					<h4 class="card-title" >
 						<?= $total['nombre']?>
 					</h4>
@@ -49,7 +51,7 @@ $productosMasVendidos = obtenerProductosMasVendidos();
 
 	 <?php include_once "cartas_totales.php"?>
 
-	 <div class="row mt-2">
+	 <div class="row mt-4">
 	 	<div class="col">
 			<div class="card">
 				<div class="card-body">
@@ -102,7 +104,7 @@ $productosMasVendidos = obtenerProductosMasVendidos();
 	 	</div>
 	 </div>
 
-	 <h4>10 Productos más vendidos</h4>
+	 <h4 class="mt-4">10 Productos más vendidos</h4>
 	 <table class="table">
 	 	<thead>
 	 		<tr>
